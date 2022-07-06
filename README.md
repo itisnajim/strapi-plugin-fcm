@@ -19,7 +19,7 @@ cd /<path-to-your-strapi-project>/src
 cd plugins
 
 # clone the plugin code into a folder and skip the prefix
-git clone git@github.com:itisnajim/strapi-plugin-fcm.git strapi-plugin-fcm
+git clone https://github.com/itisnajim/strapi-plugin-fcm.git strapi-plugin-fcm
 # install dependencies
 cd strapi-plugin-fcm && yarn install # or npm install
 ```
