@@ -1,0 +1,34 @@
+{
+  "name": "strapi-plugin-fcm",
+  "version": "0.0.1",
+  "description": "Send notifications to users or topics using The Google's service: Firebase Cloud Messaging.",
+  "strapi": {
+    "name": "Firebase - Cloud Messaging",
+    "description": "Send FCM notifications from your Strapi app.",
+    "kind": "plugin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itisnajim/strapi-plugin-fcm"
+  },
+  "author": {
+    "name": "itisnajim",
+    "email": "itisnajim@gmail.com",
+    "url": "https://itisnajim.com"
+  },
+  "maintainers": [
+    {
+      "name": "itisnajim",
+      "email": "itisnajim@gmail.com",
+      "url": "https://itisnajim.com"
+    }
+  ],
+  "engines": {
+    "node": ">=12.x.x <=16.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "firebase-admin": "^10.3.0"
+  }
+}

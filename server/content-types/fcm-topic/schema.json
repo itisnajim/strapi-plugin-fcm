@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fcm_topics",
+  "info": {
+    "singularName": "fcm-topic",
+    "pluralName": "fcm-topics",
+    "displayName": "FCM Topic"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "comment": "To create and manage FCM topics, which are used to send messages to devices from the Admin Dashboard."
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "label": {
+      "type": "string",
+      "maxLength": 100
+    }
+  }
+}

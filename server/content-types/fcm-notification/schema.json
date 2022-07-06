@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "fcm_notifications",
+  "info": {
+    "singularName": "fcm-notification",
+    "pluralName": "fcm-notifications",
+    "displayName": "FCM Notification"
+  },
+  "options": {
+    "draftAndPublish": true,
+    "comment": ""
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "body": {
+      "type": "text"
+    },
+    "payload": {
+      "type": "json"
+    },
+    "image": {
+      "type": "string"
+    },
+    "targetType": {
+      "type": "enumeration",
+      "enum": [
+        "topics",
+        "tokens"
+      ],
+      "required": true
+    },
+    "target": {
+      "type": "text",
+      "required": true
+    },
+    "response": {
+      "type": "json"
+    }
+  }
+}

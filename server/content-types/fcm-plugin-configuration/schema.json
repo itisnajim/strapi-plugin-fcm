@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "fcm_plugin_configurations",
+  "info": {
+    "singularName": "fcm-plugin-configuration",
+    "pluralName": "fcm-plugin-configurations",
+    "displayName": "FCM Plugin Configuration"
+  },
+  "options": {
+    "draftAndPublish": false,
+    "comment": ""
+  },
+  "attributes": {
+    "serviceAccount": {
+      "type": "json",
+      "required": true
+    },
+    "devicesTokensCollectionName": {
+      "type": "string",
+      "default": "up_users"
+    },
+    "deviceTokenFieldName": {
+      "type": "string",
+      "default": "device_token"
+    },
+    "deviceLabelFieldName": {
+      "type": "string",
+      "default": "username"
+    }
+  }
+}
