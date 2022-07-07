@@ -1,5 +1,5 @@
 <div align="center">
-  <img style="max-width: 200px; width: 36%; height: auto; margin-block: 1em;" src="public/assets/strapi-plugin-fcm-logo.svg" />
+  <img style="max-width: 200px; width: 24%; height: auto; margin-block: 1em;" src="public/assets/strapi-plugin-fcm-logo.svg" />
   <h1>Strapi v4 - FCM plugin</h1>
   <p>Send FCM notifications from Strapi.</p>
 </div>
