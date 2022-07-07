@@ -7,3 +7,12 @@ stats.json
 .DS_Store
 npm-debug.log
 .idea
+
+#yarn
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*
