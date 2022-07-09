@@ -81,13 +81,13 @@ module.exports = ({ strapi }) => ({
         if (Array.isArray(data)) {
             if (data.length > 0) {
                 const entries = await Promise.all(data.map(d => setupEntry(d)));
-                return await strapi.db.query(uid).createMany({ data: entries });
+                return strapi.db.query(uid).createMany({ data: entries });
             } else {
                 throw Error('Data array is empty!');
             }
         } else {
-            const entry = setupEntry(data);
-            return strapi.entityService.create(uid, entityId, { ...params, ...{ data: entry } });
+            const entry = await setupEntry(data);
+            return strapi.entityService.create(uid, { data: entry });
         }
     },
 
