@@ -69,19 +69,20 @@ module.exports = ({ strapi }) => ({
                 startLimit.start || 0,
                 startLimit.limit || 25)
         );
-        // console.log('fcm-target results', results.rows);
-
+        const rows = results.rows || results[0];
+        // console.log('fcm-target results', rows);
         if (shouldCount(fetchParams)) {
-            const count = (await knex.raw(countQuery(devicesTokensCollectionName, deviceTokenFieldName, deviceLabelFieldName))).rows?.[0]?.count;
+            const countResult = await knex.raw(countQuery(devicesTokensCollectionName, deviceTokenFieldName, deviceLabelFieldName));
+            const count = (countResult.rows || countResult[0])?.[0]?.count;
             // console.log('fcm-target countResult', count);
             return {
-                data: results.rows,
+                data: rows,
                 pagination: transformPaginationResponse(paginationInfo, Number(count)),
             };
         }
 
         return {
-            data: results.rows,
+            data: rows,
             pagination: paginationInfo,
         };
 
