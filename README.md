@@ -2,6 +2,18 @@
   <img style="max-width: 200px; width: 24%; min-width: 60px; height: auto; margin-block: 1em;" src="public/assets/strapi-plugin-fcm-logo.svg" />
   <h1>Strapi v4 - FCM plugin</h1>
   <p>Send FCM notifications from Strapi.</p>
+
+  <p>
+    <a href="https://www.npmjs.org/package/strapi-plugin-fcm">
+      <img src="https://img.shields.io/npm/v/strapi-plugin-fcm/latest.svg" alt="NPM Version" />
+    </a>
+    <a href="https://www.npmjs.org/package/strapi-plugin-fcm">
+      <img src="https://img.shields.io/npm/dm/strapi-plugin-fcm" alt="Monthly download on NPM" />
+    </a>
+    <a href="https://codecov.io/gh/itisnajim/strapi-plugin-fcm">
+      <img src="https://codecov.io/gh/itisnajim/strapi-plugin-fcm/coverage.svg?branch=master" alt="codecov.io" />
+    </a>
+  </p>
 </div>
 
 <br/>
@@ -59,7 +71,7 @@ yarn build # or npm run build
 yarn develop # or npm run develop
 ```
 
-## Configurtion
+## Configuration
 - In the Firebase console, open Settings > [Service Accounts](https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk).
 - Click Generate New Private Key, then confirm by clicking Generate Key.
 - Past the content of your downloaded service account json file into FCM Plugin Configuration > serviceAccount. (like in the picture below)
