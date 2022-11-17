@@ -12,7 +12,7 @@ module.exports = {
         console.log('send to FCM', entry);
         let payload = {
             notification: {
-                title: entry.title
+              title: entry.title
             }
         };
         if (entry.body) {
@@ -35,7 +35,7 @@ module.exports = {
         if (entry.targetType === 'tokens') {
             const tokens = entry.target.split(',');
             if (tokens.length > 1) {
-                res = await admin.messaging().sendMulticast({ tokens }, payload), options;
+                res = await admin.messaging().sendMulticast({ tokens }, payload, options);
             } else {
                 res = await admin.messaging().sendToDevice(entry.target, payload, options);
             }
