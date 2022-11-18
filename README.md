@@ -74,7 +74,7 @@ yarn develop # or npm run develop
 ## Configuration
 - In the Firebase console, open Settings > [Service Accounts](https://console.firebase.google.com/project/_/settings/serviceaccounts/adminsdk).
 - Click Generate New Private Key, then confirm by clicking Generate Key.
-- Past the content of your downloaded service account json file into FCM Plugin Configuration > serviceAccount. (like in the picture below)
+- Past the content of your downloaded service account json file into FCM Plugin Configuration > serviceAccount. (like in the picture below, then you may need to restart the server)
 <div style="margin: 20px 0" align="center">
   <img style="width: 100%; height: auto;" src="public/assets/configuration.png" alt="Configuration" />
 </div>
