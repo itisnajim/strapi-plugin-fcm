@@ -69,7 +69,17 @@ module.exports = ({ strapi }) => ({
                 startLimit.start || 0,
                 startLimit.limit || 25)
         );
-        const rows = results.rows || results[0];
+        let rows
+        switch (knex.client.config.client) {
+          case 'better-sqlite3': {
+            rows = results
+            break;
+          }
+          default: {
+            rows = results.rows || results[0];
+            break;
+          }
+        }
         // console.log('fcm-target results', rows);
         if (shouldCount(fetchParams)) {
             const countResult = await knex.raw(countQuery(devicesTokensCollectionName, deviceTokenFieldName, deviceLabelFieldName));
