@@ -1,5 +1,5 @@
 {
-  "name": "@itisnajim/strapi-plugin-fcm",
+  "name": "strapi-plugin-fcm",
   "version": "1.0.5",
   "description": "Send notifications to users or topics using The Google's service: Firebase Cloud Messaging.",
   "strapi": {
@@ -13,10 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/itisnajim/strapi-plugin-fcm.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/itisnajim"
+    "url": "https://github.com/itisnajim/strapi-plugin-fcm"
   },
   "author": {
     "name": "itisnajim",
