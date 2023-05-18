@@ -73,12 +73,12 @@ module.exports = {
             if (admin.apps?.length > 1) {
                 Promise.all(admin.apps.map(app => app.delete())).then(() => {
                     admin.initializeApp({
-                        credential: admin.credential.cert(serviceAccount)
+                        credential: admin.credential.cert(data.serviceAccount)
                     });
                 });
             } else {
                 admin.initializeApp({
-                    credential: admin.credential.cert(serviceAccount),
+                    credential: admin.credential.cert(data.serviceAccount),
                 });
             }
         }
