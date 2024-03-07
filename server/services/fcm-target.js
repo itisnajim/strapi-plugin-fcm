@@ -5,9 +5,9 @@ const {
     convertPagedToStartLimit,
     shouldCount,
     transformPaginationResponse,
-} = require('@strapi/strapi/lib/core-api/service/pagination');
+} = require('@strapi/strapi');
 
-const { getFetchParams } = require('@strapi/strapi/lib/core-api/service');
+const { getFetchParams } = require('@strapi/strapi');
 
 
 // we will use this for now, until we have a better way.
