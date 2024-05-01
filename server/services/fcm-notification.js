@@ -15,7 +15,7 @@ const {
     transformPaginationResponse,
 } = require('@strapi/strapi');
 
-const { getFetchParams } = require('@strapi/strapi');
+const { getFetchParams } = require('@strapi/strapi/lib/core-api/service');
 
 const {
     hasDraftAndPublish,
