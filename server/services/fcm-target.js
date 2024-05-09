@@ -7,7 +7,7 @@ const {
     transformPaginationResponse,
 } = require('@strapi/strapi');
 
-const { getFetchParams } = require('@strapi/strapi');
+const { getFetchParams } = require('@strapi/strapi/lib/core-api/service');
 
 
 // we will use this for now, until we have a better way.
