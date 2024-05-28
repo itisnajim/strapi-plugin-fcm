@@ -1,6 +1,6 @@
 {
   "name": "strapi-plugin-fcm",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Send notifications to users or topics using The Google's service: Firebase Cloud Messaging.",
   "strapi": {
     "displayName": "Firebase - Cloud Messaging",
