@@ -37,7 +37,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "firebase-admin": "^10.3.0"
+    "firebase-admin": "^12.3.0"
   },
   "packageManager": "yarn@3.6.1"
 }

@@ -39,21 +39,58 @@ module.exports = {
         let res = null;
         if (entry.targetType === 'tokens') {
             const tokens = entry.target.split(',');
+
+            /*
+            * Deprecated Endpoints:
+            * The Firebase Admin SDK has deprecated the sendMulticast and sendToDevice methods.
+            * These were causing issues with errors like:
+            * FirebaseMessagingError: An unknown server error was returned. 
+            * Raw server response: "{"error":"Deprecated endpoint, see https://firebase.google.com/docs/cloud-messaging/migrate-v1"}"
+            *
+            * Replacements:
+            * - sendMulticast() -> sendEachForMulticast()
+            * - sendToDevice() -> send() with token field
+            */
+
             if (tokens.length > 1) {
-                res = await admin.messaging().sendMulticast({ tokens }, payload, options);
+                // Using sendEachForMulticast() instead of the deprecated sendMulticast()
+                res = await admin.messaging().sendEachForMulticast({
+                    tokens: tokens,
+                    notification: payload.notification,
+                });
             } else {
-                res = await admin.messaging().sendToDevice(entry.target, payload, options);
+                // Using send() with token instead of the deprecated sendToDevice()
+                res = await admin.messaging().send({
+                    token: entry.target,
+                    notification: payload.notification,
+                });
             }
         } else {
             const topics = entry.target.split(',');
+
+            /*
+            * Deprecated Endpoints:
+            * The Firebase Admin SDK has deprecated the sendToTopic and sendToCondition methods.
+            * These were causing issues with deprecated endpoint errors.
+            *
+            * Replacements:
+            * - sendToTopic() -> send() with topic field
+            * - sendToCondition() -> send() with condition field
+            */
+
             if (topics.length > 1) {
-                res = await admin.messaging().sendToCondition(
-                    topics.map(t => `'${t}' in topics`).join(' || '),
-                    payload,
-                    options
-                );
+                // Using send() with condition instead of the deprecated sendToCondition()
+                const condition = topics.map(t => `'${t}' in topics`).join(' || ');
+                res = await admin.messaging().send({
+                    condition: condition,
+                    notification: payload.notification,
+                });
             } else {
-                res = await admin.messaging().sendToTopic(entry.target, payload, options);
+                // Using send() with topic instead of the deprecated sendToTopic()
+                res = await admin.messaging().send({
+                    topic: entry.target,
+                    notification: payload.notification,
+                });
             }
         }
         console.log('send to FCM res', JSON.stringify(res));
